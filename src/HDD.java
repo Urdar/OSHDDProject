@@ -3,17 +3,19 @@ import java.util.ArrayList;
 /**
  * Created by jens on 10.04.15.
  */
+
 public class HDD {
 
     ArrayList<String> storage;
 
-    private HDD() {
-        ArrayList<String> storage = new ArrayList<String>();
-
+    public HDD() {
+        storage = new ArrayList<String>();
     }
 
     public void write(String input) {
+        System.out.println(input + " ble gitt");
         storage.add(input);
+        System.out.println("Lagret " + input);
     }
 
     public String read(int index) {
@@ -23,14 +25,14 @@ public class HDD {
     }
 
     public int seek(String searchString) {
-
+int result = 999;
         for (int step = 0; step < storage.size(); step++) {
-            if (storage.get(step) == searchString) {
+            if (storage.get(step).equals(searchString)) {
                 // Fant den, returnere index
-                return step;
+                result = step;
             }
         }
-        return 0;
+        return result;
     }
 
 }

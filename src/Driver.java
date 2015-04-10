@@ -3,10 +3,10 @@
  */
 public class Driver {
 
-    HDD hardDrive;
+    public HDD hardDrive;
 
-    public void dDriver(HDD hardDrive){
-        this.hardDrive = hardDrive;
+    public Driver(){
+        hardDrive = new HDD();
     }
 
     public String dRead(int index){
